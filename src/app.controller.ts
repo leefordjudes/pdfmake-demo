@@ -12,7 +12,7 @@ export class AppController {
     const pdf: PDFKit.PDFDocument = await this.appService.generatePdf();
     res.set('Content-Type', 'application/pdf');
     res.set('Content-Disposition', 'attachment; filename=output.pdf');
-    pdf.pipe(res);
+    pdf.pipe(res)
     pdf.end();
   }
 }
